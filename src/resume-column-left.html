@@ -1,0 +1,130 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="resume-column-left">
+  <template>
+    <style>
+      :host {
+        display: block;
+          width: 48%;
+          float:left;
+          text-align: right; 
+      }
+        
+      h1{
+        font-family: 'Open Sans', sans-serif;
+        font-weight:600;
+        color: #1a1818;
+        text-transform: uppercase;
+        font-size: 1.0em;
+        line-height: 5px;
+        margin-top: 30px;  
+      }
+        
+      h2{
+        font-family: 'Open Sans', sans-serif;
+        font-weight:600;
+        color: #1a1818;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        line-height: 5px;
+        margin-top: 30px;  
+      }
+        
+     .date{    
+        font-family: 'Open Sans', sans-serif;
+        font-weight:200;
+        color: #464749;
+        font-size: 0.9em;
+      }
+        
+     .descript{    
+        font-family: 'Open Sans', sans-serif;
+        font-weight:200;
+        color: #464749;
+        font-size: 0.8em; 
+        line-height: 0; 
+      } 
+        
+      ul{
+        list-style: none; 
+        padding-left: 0;
+      }
+
+      li{      
+        font-family: 'Open Sans', sans-serif;
+        font-weight:200;
+        color: #464749;
+        font-size: 0.8em;
+        margin-bottom: 10px;  
+      
+      }    
+    </style> 
+    <h1>Experience</h1>  
+    <div>
+      <h2>Full Stack Developer</h2>
+      <p class="date">SO Creative Inc. | May 2014 - Present</p>
+      <p class="descript">Research / development with new and upcoming technologies.</p>
+      <ul>
+        <li>Focused Languages &amp; Tech: </li>
+        <li>iBeacon / EddyStone (BLE)</li>
+        <li>Objective-C / Swift</li>
+        <li>PHP (PDO) / MySQL</li>
+        <li>Javascript / jQuery / AJAX / JSON</li>
+        <li></li>
+      </ul>    
+    </div>
+    <div>
+      <h2>Professor</h2>
+      <p class="date">Durham College | Jan 2017 - Present</p>
+      <p class="descript">Contracted to teach within the school of Media, Art &amp; Design.</p>
+      <ul>
+        <li>Courses Taught: </li>
+        <li>Media Integration (PHP/MySQL, jQuery, AJAX)</li>
+        <li>Scripting For Design (Javascript)</li>
+        <li>Digital Illustration &amp; Imaging (Photoshop, Illustrator)</li>
+        <li>Interactive Design &amp; Animation (Adobe Animate)</li>
+      </ul>    
+    </div>
+    <div>
+    <h2>Front-End Developer</h2>
+      <p class="date">Durham College | Jan 2013 - Sept 2013</p>
+      <p class="descript">Worked in teams as the front-end developer.</p>
+      <ul>
+        <li>Languages Used:</li>
+        <li>HTML5 / CSS3</li>
+        <li>Javascript / jQuery / Angular.js</li>
+        <li>Git</li>
+        <li>PhoneGap</li>
+      </ul>    
+    </div>
+    <div>
+      <h2>Web Designer / Developer</h2>
+      <p class="date">Freelance | Oct 2013 - Present</p>
+      <p class="descript">Taking on clients working on:</p>
+      <ul>
+        <li>Design &amp; development of Websites </li>
+        <li>Comprehensive layouts</li>
+        <li>Logo design (Company Branding)</li>
+        <li>Website design updates</li>
+        <li>Small to large back-end dynamic capabilities</li>
+        <li>Search Engine Optimization (SEO)</li>
+      </ul>    
+    </div>
+  </template>
+
+  <script>
+    /**
+     * `resume-column-left`
+     * A column that will make up the left of the resume page.
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class ResumeColumnLeft extends Polymer.Element {
+      static get is() { return 'resume-column-left'; }
+    }
+
+    window.customElements.define(ResumeColumnLeft.is, ResumeColumnLeft);
+  </script>
+</dom-module>

@@ -1,0 +1,125 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="resume-column-right">
+  <template>
+    <style>
+      :host {
+        display: block;
+        width: 48%;
+        float:right;
+        text-align: left; 
+      }
+        
+      h1{
+        font-family: 'Open Sans', sans-serif;
+        font-weight:600;
+        color: #1a1818;
+        text-transform: uppercase;
+        font-size: 1.0em;
+        line-height: 5px;
+        margin-top: 30px;  
+      }
+        
+      h2{
+        font-family: 'Open Sans', sans-serif;
+        font-weight:600;
+        color: #1a1818;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        line-height: 5px;
+        margin-top: 30px;  
+      }
+        
+      h3{
+        font-family: 'Open Sans', sans-serif;
+        font-weight:400;
+        color: #6d6f72;
+        font-size: 0.8em;
+        line-height: 5px;
+        margin-top: 30px;  
+      }
+        
+     .date{    
+        font-family: 'Open Sans', sans-serif;
+        font-weight:200;
+        color: #464749;
+        font-size: 0.9em;
+      }
+        
+     .descript{    
+        font-family: 'Open Sans', sans-serif;
+        font-weight:200;
+        color: #464749;
+        font-size: 0.8em; 
+        line-height: 0; 
+      } 
+        
+      ul{
+        list-style: none; 
+        padding-left: 0;
+      }
+
+      li{      
+        font-family: 'Open Sans', sans-serif;
+        font-weight:200;
+        color: #464749;
+        font-size: 0.8em;
+        margin-bottom: 10px;  
+      
+      }    
+    </style> 
+    <h1>Education</h1>  
+    <div>
+      <h2>Multimedia Design (Advanced Diploma)</h2>
+      <p class="date">Durham College | 2010 - 2013</p>
+      <p class="descript">Graduated with a 4.47 GPA &amp; received a presidential honours
+          award.</p>
+      <h2>High School</h2>
+      <p class="date">St. Stephen’s Secondary | 2006 - 2010</p>
+      <p class="descript">Graduated with honours &amp; received an award in English.</p>
+    </div>
+    <h1>Skills</h1>    
+    <div>
+      <h3>Technical:</h3>
+      <ul>
+        <li>Objective-C / Swift / Xcode (iOS Development)</li>
+        <li>PHP (PDO) / MySQL</li>
+        <li>HTML5 / CSS3</li>
+        <li>Javascript / jQuery / Angular.js / AJAX</li>
+        <li>RESTful APIs</li>
+        <li>JSON / XML</li>
+        <li>Git</li>
+        <li>ActionScript 3.0</li>
+        <li>Object Oriented Programming (OOP)</li>
+        <li>Model / View / Controller (MVC) Application Design</li>
+        <li>The Adobe Suites</li>   
+      </ul>    
+      <h3>Personal:</h3> 
+      <ul>
+        <li>Excellent communication and verbal skills</li>
+        <li>Performs well under pressure</li>
+        <li>Extremely reliable</li>
+        <li>Works well in teams or independently</li>
+        <li>Very comfortable with public speaking</li>
+      </ul>
+      <h1>References</h1>
+      <p class="date">References are avialable upon request.</p>
+    </div>
+  </template>
+
+  <script>
+    /**
+     * `resume-column-right`
+     * A column that will make up the right side of the resume page.
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class ResumeColumnRight extends Polymer.Element {
+      static get is() { return 'resume-column-right'; }
+    }
+
+    window.customElements.define(ResumeColumnRight.is, ResumeColumnRight);
+  </script>
+</dom-module>

@@ -1,0 +1,189 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="./cv-header.html">
+<link rel="import" href="./ms-icons.html">
+<link rel="lazy-import" href="./ms-resume.html">
+<link rel="lazy-import" href="./ms-certificates.html">
+<link rel="lazy-import" href="./ms-references.html">
+<link rel="lazy-import" href="./ms-404.html">
+
+
+<dom-module id="ms-app">
+  <template>
+    <style>
+      :host {
+        --app-primary-color: #ffffff;
+        --app-secondary-color: black;
+
+        display: block;
+      }
+
+      app-drawer-layout:not([narrow]) [drawer-toggle] {
+        display: none;
+      }
+
+      app-header {
+        color: #fff;
+        background-color: var(--app-primary-color);
+      }
+        
+      app-header-layout{
+        background-color: var(--app-primary-color);
+        margin: 20px;
+        height: auto;
+        padding-bottom: 20px;    
+      }
+
+      app-header paper-icon-button {
+        --paper-icon-button-ink-color: white;
+      }
+
+      .drawer-list {
+        margin: 0 20px;
+      }
+
+      .drawer-list a {
+        display: block;
+        padding: 0 16px;
+        text-decoration: none;
+        color: var(--app-secondary-color);
+        line-height: 40px;
+      }
+
+      .drawer-list a.iron-selected {
+        color: black;
+        font-weight: bold;
+      }
+        
+      iron-selector{    
+        right: 0;
+        bottom: 20px;
+        position: fixed;    
+      }
+      iron-selector>a{
+        margin-bottom: 5px;    
+      }
+        
+      paper-fab[mini] {
+        --paper-fab-background: #2ecc71;
+      }
+
+      paper-fab[label] {
+        font-size: 20px;
+        --paper-fab-background: #ffffff;
+      }
+        
+    </style>
+
+    <app-location
+        route="{{route}}"
+        url-space-regex="^[[rootPath]]">
+    </app-location>
+
+    <app-route
+        route="{{route}}"
+        pattern="[[rootPath]]:page"
+        data="{{routeData}}"
+        tail="{{subroute}}">
+    </app-route>
+   
+    <app-drawer-layout fullbleed narrow="{{narrow}}">
+      <!-- Main content -->
+      <app-header-layout has-scrolling-region>
+        <cv-header></cv-header>
+        <iron-pages
+            selected="[[page]]"
+            attr-for-selected="name"
+            fallback-selection="404"
+            role="main">
+          <ms-resume name="resume"></ms-resume>
+          <ms-certificates name="certificates"></ms-certificates>
+          <ms-references name="references"></ms-references>
+          <ms-404 name="404"></ms-404>
+        </iron-pages>
+        <!--  Will get back to implement once first "resume" page has been completed
+        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+            <a name="resume" href="[[rootPath]]resume"><paper-fab  mini>1</paper-fab></a>
+            <a name="certificates" href="[[rootPath]]certificates"><paper-fab mini>2</paper-fab></a>
+            <a name="references" href="[[rootPath]]references"><paper-fab mini>3</paper-fab></a>
+        </iron-selector>
+        -->
+      </app-header-layout>
+    </app-drawer-layout>
+  </template>
+
+  <script>
+    // Gesture events like tap and track generated from touch will not be
+    // preventable, allowing for better scrolling performance.
+    Polymer.setPassiveTouchGestures(true);
+
+    class MsApp extends Polymer.Element {
+      static get is() { return 'ms-app'; }
+
+      static get properties() {
+        return {
+          page: {
+            type: String,
+            reflectToAttribute: true,
+            observer: '_pageChanged',
+          },
+          routeData: Object,
+          subroute: Object,
+          // This shouldn't be neccessary, but the Analyzer isn't picking up
+          // Polymer.Element#rootPath
+          rootPath: String,
+        };
+      }
+
+      static get observers() {
+        return [
+          '_routePageChanged(routeData.page)',
+        ];
+      }
+
+      _routePageChanged(page) {
+        // If no page was found in the route data, page will be an empty string.
+        // Default to 'view1' in that case.
+        this.page = page || 'resume';
+
+      }
+
+      _pageChanged(page) {
+        // Load page import on demand. Show 404 page if fails
+        const resolvedPageUrl = this.resolveUrl('ms-' + page + '.html');
+        Polymer.importHref(
+            resolvedPageUrl,
+            null,
+            this._showPage404.bind(this),
+            true);
+      }
+
+      _showPage404() {
+        this.page = '404';
+      }
+    }
+
+    window.customElements.define(MsApp.is, MsApp);
+  </script>
+</dom-module>

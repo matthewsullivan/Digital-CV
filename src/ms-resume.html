@@ -1,0 +1,63 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="./resume-column-left.html">
+<link rel="import" href="./resume-column-right.html">
+<link rel="import" href="./shared-styles.html">
+
+<dom-module id="ms-resume">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      } 
+      .vertical-line-wrapper{
+        float:left;
+        width: 4%;
+        opacity: 0.8;
+        margin-top: 25px;  
+       }    
+      .circle {
+        width: 7px;
+        height: 7px;
+        background-color: #6d6f72;  
+        border-radius: 100px;
+        position: relative;
+        margin: 5px auto 5px auto;
+      }
+      .vertical-line {
+        width: 1px;
+        background-color: #6d6f72;
+        margin: 5px auto 5px auto;
+      }
+    </style>
+    <resume-column-left></resume-column-left>
+    <div class="vertical-line-wrapper">
+        <div class="circle"></div>
+        <div style="height:183px;" class="vertical-line"></div>
+        <div class="circle"></div>
+        <div style="height:548px;" class="vertical-line"></div>
+        <div class="circle"></div>
+        <div style="height:220px;" class="vertical-line"></div>
+    </div>
+    <resume-column-right></resume-column-right>
+    
+  </template>
+
+  <script>
+    class MsResume extends Polymer.Element {
+      static get is() { return 'ms-resume'; }
+    }
+
+    window.customElements.define(MsResume.is, MsResume);
+  </script>
+</dom-module>

@@ -1,0 +1,81 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/open-sans/fonts/semibold/opensans-semibold-webfont.ttf">
+<link rel="import" href="./shared-styles.html">
+
+<dom-module id="cv-header">
+    <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+    
+     h1 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight:600;
+        color: #1a1818;
+        text-transform: uppercase;
+        font-size: 2.0em;
+        letter-spacing: 4px;
+        line-height: 25px;
+        margin-top: 30px; 
+    
+      }
+        
+     h2 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight:600;
+        color: #b3b3b3;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-size: 1.2em;
+        line-height: 5px;
+        margin-bottom: 30px;
+      }
+        
+      p{
+        color: #000000;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.8em;
+        line-height: 10px;
+      }   
+        
+      a{
+        color: #000000;
+        text-decoration: none;
+      }    
+        
+     a:hover {
+      transition: color .8s;
+      color: #2ecc71;
+     }
+   
+    </style>
+
+    <div class="header-card">
+      <img src="images/manifest/icon-512x512.png" alt="Matthew Sullivan Logo" width="150" height="150">
+      <h1>Matthew Sullivan</h1>
+      <h2>Enthusiastic and Experienced Full stack Developer</h2>
+      <p>Address: 125 Elgin Street, Bowmanville Ontario, Canada, L1C 3E8</p>
+        <p>P: (905) 441-0958  E: <a href="mailto:contact@matthewsullivan.media" target="_blank">contact@matthewsullivan.media</a>  W: <a href="https://www.matthewsullivan.media/" target="_blank">www.matthewsullivan.media</a></p>    
+    </div>
+  </template>
+
+    <script>
+        /**
+         * `cv-header`
+         * Simple CV header element to be re-used in multiple CV pages.
+         *
+         * @customElement
+         * @polymer
+         * @demo demo/index.html
+         */
+        class CvHeader extends Polymer.Element {
+            static get is() {
+                return 'cv-header';
+            }
+        }
+
+        window.customElements.define(CvHeader.is, CvHeader);
+    </script>
+</dom-module>
