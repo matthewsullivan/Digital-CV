@@ -2,9 +2,9 @@
   "entrypoint": "index.html",
   "shell": "src/ms-app.html",
   "fragments": [
-    "src/ms-resume.html",
-    "src/ms-certificates.html",
-    "src/ms-references.html",
+    "src/resume/ms-resume.html",
+    "src/certificates/ms-certificates.html",
+    "src/references/ms-references.html",
     "src/ms-404.html"
   ],
   "sources": [
