@@ -9,6 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="./certificates-column-left.html">
+<link rel="import" href="./certificates-column-right.html">
 <link rel="import" href="./shared-styles.html">
 
 <dom-module id="ms-certificates">
@@ -16,17 +18,58 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       :host {
         display: block;
-
         padding: 10px;
+      }
+      .vertical-line-wrapper{
+        float:left;
+        width: 4%;
+        opacity: 0.8;
+        margin-top: 25px;  
+       }    
+      .circle {
+        width: 7px;
+        height: 7px;
+        background-color: #6d6f72;  
+        border-radius: 100px;
+        position: relative;
+        margin: 5px auto 5px auto;
+      }  
+      .vertical-line{
+         width: 1px;
+         background-color: #6d6f72;
+         margin: 5px auto 5px auto;
+       }
+      .vertical-line:nth-of-type(2){
+          height:300px;
+       }
+       .vertical-line:nth-of-type(4){
+          height:120px;
+       }
+       .vertical-line:nth-of-type(6){
+          height:188px;
+       }
+      .vertical-line:nth-of-type(8){
+          height:200px;
+       }
+       @media only screen and (max-width : 768px) {
+           .vertical-line-wrapper{
+               display: none;
+           }   
       }
     </style>
 
-    <div class="card">
-      <div class="circle">2</div>
-      <h1>View Two</h1>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
-      <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
+    <certificates-column-left></certificates-column-left>
+    <div class="vertical-line-wrapper">
+        <div class="circle"></div>
+        <div class="vertical-line"></div>
+        <div class="circle"></div>
+        <div class="vertical-line"></div>
+        <div class="circle"></div>
+        <div class="vertical-line"></div>
+        <div class="circle"></div>
+        <div class="vertical-line"></div>
     </div>
+    <certificates-column-right></certificates-column-right>
   </template>
 
   <script>

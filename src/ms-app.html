@@ -19,6 +19,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-route/app-route.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/iron-iconset-svg/index.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-fab/paper-fab.html">
 <link rel="import" href="./cv-header.html">
@@ -87,13 +88,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         
       paper-fab[mini] {
         --paper-fab-background: #2ecc71;
+        --paper-fab-keyboard-focus-background: #2ecc71;
       }
 
       paper-fab[label] {
-        font-size: 20px;
-        --paper-fab-background: #ffffff;
-      }
-        
+        font-size: 16px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight:600;
+        line-height: 20px;  
+      }     
     </style>
 
     <app-location
@@ -119,16 +122,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             role="main">
           <ms-resume name="resume"></ms-resume>
           <ms-certificates name="certificates"></ms-certificates>
-          <ms-references name="references"></ms-references>
+          <!--<ms-references name="references"></ms-references>-->
           <ms-404 name="404"></ms-404>
         </iron-pages>
-        <!--  Will get back to implement once first "resume" page has been completed
+       
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-            <a name="resume" href="[[rootPath]]resume"><paper-fab  mini>1</paper-fab></a>
-            <a name="certificates" href="[[rootPath]]certificates"><paper-fab mini>2</paper-fab></a>
-            <a name="references" href="[[rootPath]]references"><paper-fab mini>3</paper-fab></a>
+            <a name="resume" href="[[rootPath]]resume"><paper-fab label="1" mini></paper-fab></a>
+            <a name="certificates" href="[[rootPath]]certificates"><paper-fab label="2" mini>2</paper-fab></a>
+            <!--<a name="references" href="[[rootPath]]references"><paper-fab mini>3</paper-fab></a>-->
         </iron-selector>
-        -->
       </app-header-layout>
     </app-drawer-layout>
   </template>

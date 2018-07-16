@@ -1,0 +1,65 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="certificates-column-left">
+  <template>
+    <style>
+      :host {
+        display: block;
+          width: 18%;
+          float:left;
+          padding-left: 20%;
+          text-align: left; 
+      }
+      
+      h1{
+        font-family: 'Open Sans', sans-serif;
+        font-weight:600;
+        color: #1a1818;
+        text-transform: uppercase;
+        font-size: 1.0em;
+        line-height: 5px;
+        margin-top: 30px;  
+      }    
+     
+      h1:nth-of-type(1){
+        margin-top: 32px;  
+        margin-bottom: 313px;
+      } 
+      h1:nth-of-type(2){
+        margin-bottom: 130px;
+      }
+      h1:nth-of-type(3){
+        margin-bottom: 196px;
+      }
+        
+      @media only screen and (max-width : 768px) {
+          :host {
+            display:none;
+              
+          }
+      }
+    </style> 
+    <div>
+      <h1>Certificates</h1>  
+      <h1>Charity Work</h1> 
+      <h1>Awards</h1>   
+      <h1>Interests</h1>
+    </div>
+  </template>
+
+  <script>
+    /**
+     * `certificates-column-left`
+     * A column that will make up the left of the resume page.
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class CertificatesColumnLeft extends Polymer.Element {
+      static get is() { return 'certificates-column-left'; }
+    }
+
+    window.customElements.define(CertificatesColumnLeft.is, CertificatesColumnLeft);
+  </script>
+</dom-module>

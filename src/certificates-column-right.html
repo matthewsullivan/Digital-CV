@@ -1,0 +1,139 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="certificates-column-right">
+  <template>
+    <style>
+      :host {
+        display: block;
+        width: 58%;
+        float:right;
+        text-align: left; 
+      }
+        
+      h1{
+        display:none;   
+      } 
+        
+      h2{
+        font-family: 'Open Sans', sans-serif;
+        font-weight:600;
+        color: #1a1818;
+        font-size: 0.8em;
+        line-height: 5px;
+        margin-top: 30px;  
+      }
+                
+     .descript{    
+        font-family: 'Open Sans', sans-serif;
+        font-weight:200;
+        color: #464749;
+        font-size: 0.8em; 
+        margin-top: 10px; 
+      } 
+          
+      ul{
+        list-style: none; 
+        padding-left: 0;
+      }
+
+      li{      
+        font-family: 'Open Sans', sans-serif;
+        font-weight:200;
+        color: #464749;
+        font-size: 0.8em;
+        margin-bottom: 10px;  
+      
+      }
+      .short-width{
+        width: 65%;      
+      }
+        
+      ul{
+        margin-top: 40px;
+      }
+      @media only screen and (max-width : 768px) {
+          :host {
+            width: 100%;
+            text-align: center;  
+          }
+          
+          h1{
+            font-family: 'Open Sans', sans-serif;
+            font-weight:600;
+            color: #1a1818;
+            text-transform: uppercase;
+            font-size: 1.0em;
+            line-height: 5px;
+            margin-top: 60px;
+            display:inline;   
+          }
+          
+          h2{
+              margin-top: 10px;
+          }
+          
+          ul{
+            margin-top: 10px;
+           }
+          .short-width{
+            width: 100%;      
+          }
+          
+         .descript{  
+             line-height: 18px;  
+          }
+      }
+    </style> 
+    <div>
+      <h1>Certificates</h1>    
+      <h2>Learn Java</h2>
+      <p class="descript">codecademy.com | Sept 2016</p>
+      <h2>Distributing iOS Applications Through the App Store</h2>
+      <p class="descript">lynda.com | Jan 2016</p>
+      <h2>Up and Running With Angular.js</h2>
+      <p class="descript">lynda.com | June 2015</p>
+      <h2>iOS App Development Essential Training</h2>
+      <p class="descript">lynda.com | June 2014</p>
+      <h2>Objective-C Essential Training</h2>
+      <p class="descript">lynda.com | May 2014</p>    
+    </div>
+    <div class="short-width">
+      <h1>Charity Work</h1>        
+      <h2>Monica Martineau Foundation</h2>
+      <p class="descript">IT / Web-Master | 2013 - Present <br> Manages IT related items and web support for the Monica Martineau Foundation. The Monica Martineau Foundation Provides scholarships for graduating grade 8 and 12 students, funds for the Society of St. Vincent de Paul and for R. Martineau House for mentally &amp; physically handicapped individuals.</p>  
+    </div>
+    <div>
+      <h1>Awards</h1>     
+      <h2>Presidential Honours</h2>
+      <p class="descript">Achieved an average of more than 80% for 35 credits</p>
+      <h2>Honour Roll</h2>
+      <p class="descript">Achieved an average of more than 80% for 6 classes</p>
+      <h2>English Award</h2>   
+      <p class="descript">Graduated with the highest grade within Grade 12 English</p>    
+    </div>
+    <div>
+      <h1>Interests</h1>
+      <ul>
+          <li>Playing / Listening to music</li>
+          <li>Reading</li>
+          <li>Gardening</li>
+      </ul>  
+    </div>
+  </template>
+
+  <script>
+    /**
+     * `certificates-column-right`
+     * A column that will make up the right side of the resume page.
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class CeriticatesColumnRight extends Polymer.Element {
+      static get is() { return 'certificates-column-right'; }
+    }
+
+    window.customElements.define(CeriticatesColumnRight.is, CeriticatesColumnRight);
+  </script>
+</dom-module>
