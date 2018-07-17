@@ -30,12 +30,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="lazy-import" href="./ms-404.html">
 
 
+
 <dom-module id="ms-app">
   <template>
     <style>
       :host {
-        --app-primary-color: #ffffff;
-        --app-secondary-color: black;
+         --application-white-color: #ffffff;  
+         --application-navyblue-color: #070a21;    
+         --application-grey-color: #6d6f72;
+         --application-darkgrey-color: #464749;
+         --application-lightgrey-color: #6d6f72;
+         --application-green-color: #2ecc71;
+         --application-font-family: 'Open Sans', sans-serif;    
 
         display: block;
       }
@@ -46,11 +52,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       app-header {
         color: #fff;
-        background-color: var(--app-primary-color);
+        background-color: var(--application-white-color);
       }
         
       app-header-layout{
-        background-color: var(--app-primary-color);
+        background-color: var(--application-white-color);
         margin: 20px;
         height: auto;
         padding-bottom: 20px;    
@@ -68,7 +74,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         padding: 0 16px;
         text-decoration: none;
-        color: var(--app-secondary-color);
+        color: var(--application-white-color);
         line-height: 40px;
       }
 
@@ -87,8 +93,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
         
       paper-fab[mini] {
-        --paper-fab-background: #2ecc71;
-        --paper-fab-keyboard-focus-background: #2ecc71;
+        --paper-fab-background: var(--application-green-color);
+        --paper-fab-keyboard-focus-background: var(--application-green-color);
       }
 
       paper-fab[label] {
