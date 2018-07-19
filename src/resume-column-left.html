@@ -5,9 +5,9 @@
     <style>
       :host {
         display: block;
-          width: 48%;
-          float:left;
-          text-align: right; 
+        width: 48%;
+        float:left;
+        text-align: right; 
       }
       
       h1{
@@ -68,58 +68,18 @@
              line-height: 18px;  
           }
       }
-    </style> 
-    <h1>Experience</h1>  
-    <div>
-      <h2>Full Stack Developer</h2>
-      <p class="date">SO Creative Inc. | May 2014 - Present</p>
-      <p class="descript">Research / development with new and upcoming technologies.</p>
+    </style>
+    <h1>Experience</h1>
+    <template is="dom-repeat" items="{{experience}}" as="experience">
+      <h2>[[experience.title]]</h2>
+      <p class="date">[[experience.company]] | [[experience.workDate]]</p>
+      <p class="descript">[[experience.descript]]</p>
       <ul>
-        <li>Focused Languages &amp; Tech: </li>
-        <li>iBeacon / EddyStone (BLE)</li>
-        <li>Objective-C / Swift</li>
-        <li>PHP (PDO) / MySQL</li>
-        <li>Javascript / jQuery / AJAX / JSON</li>
-        <li></li>
-      </ul>    
-    </div>
-    <div>
-      <h2>Professor</h2>
-      <p class="date">Durham College | Jan 2017 - Present</p>
-      <p class="descript">Contracted to teach within the school of Media, Art &amp; Design.</p>
-      <ul>
-        <li>Courses Taught: </li>
-        <li>Media Integration (PHP/MySQL, jQuery, AJAX)</li>
-        <li>Scripting For Design (Javascript)</li>
-        <li>Digital Illustration &amp; Imaging (Photoshop, Illustrator)</li>
-        <li>Interactive Design &amp; Animation (Adobe Animate)</li>
-      </ul>    
-    </div>
-    <div>
-    <h2>Front-End Developer</h2>
-      <p class="date">Durham College | Jan 2013 - Sept 2013</p>
-      <p class="descript">Worked in teams as the front-end developer.</p>
-      <ul>
-        <li>Languages Used:</li>
-        <li>HTML5 / CSS3</li>
-        <li>Javascript / jQuery / Angular.js</li>
-        <li>Git</li>
-        <li>PhoneGap</li>
-      </ul>    
-    </div>
-    <div>
-      <h2>Web Designer / Developer</h2>
-      <p class="date">Freelance | Oct 2013 - Present</p>
-      <p class="descript">Taking on clients working on:</p>
-      <ul>
-        <li>Design &amp; development of Websites </li>
-        <li>Comprehensive layouts</li>
-        <li>Logo design (Company Branding)</li>
-        <li>Website design updates</li>
-        <li>Small to large back-end dynamic capabilities</li>
-        <li>Search Engine Optimization (SEO)</li>
-      </ul>    
-    </div>
+        <template is="dom-repeat" items="{{experience.points}}" as="points">
+            <li>[[points]]</li>
+        </template>    
+      </ul>   
+    </template>
   </template>
 
   <script>
@@ -132,9 +92,28 @@
      * @demo demo/index.html
      */
     class ResumeColumnLeft extends Polymer.Element {
+        
       static get is() { return 'resume-column-left'; }
+        
+      static get properties() {
+            
+          return {
+              experience: {
+                type: Array,
+                value() {
+                  return [
+                    {title: "Full Stack Developer", company: "SO Creative Inc.", workDate: "May 2014 - Present", descript:"Research / development with new and upcoming technologies.", points: ["Focused Languages &amp; Tech:", "iBeacon / EddyStone (BLE)", "Objective-C / Swift", "PHP (PDO) / MySQL", "Javascript / jQuery / AJAX / JSON"]},
+                    {title: "Professor", company: "Durham College", workDate: "Jan 2017 - Present", descript:"Contracted to teach within the school of Media, Art &amp; Design.", points: ["Courses Taught:", "Media Integration (PHP/MySQL, jQuery, AJAX)", "Scripting For Design (Javascript)", "Digital Illustration &amp; Imaging (Photoshop, Illustrator)", "Interactive Design &amp; Animation (Adobe Animate)"]},
+                    {title: "Front-End Developer", company: "Durham College", workDate: "Jan 2013 - Sept 2013", descript:"Worked in teams as the front-end developer", points: ["Languages Used:", "HTML5 / CSS3", "Javascript / jQuery / Angular.js", "Git", "PhoneGap"]},
+                    {title: "Web Designer / Developer", company: "Freelance", workDate: "Oct 2013 - Present", descript:"Taking on clients working on:", points: ["Design &amp; development of Websites", "Comprehensive layouts", "Logo design (Company Branding)", "Website design updates", "Small to large back-end dynamic capabilities", "Search Engine Optimization (SEO)"]},
+                  ];
+                }
+              }
+           }
+       }
+        
     }
-
+      
     window.customElements.define(ResumeColumnLeft.is, ResumeColumnLeft);
   </script>
 </dom-module>

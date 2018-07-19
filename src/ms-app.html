@@ -9,8 +9,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
-<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
@@ -19,27 +17,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-route/app-route.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
-<link rel="import" href="../bower_components/iron-iconset-svg/index.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-fab/paper-fab.html">
 <link rel="import" href="./cv-header.html">
-<link rel="import" href="./ms-icons.html">
-<link rel="lazy-import" href="./ms-resume.html">
-<link rel="lazy-import" href="./ms-certificates.html">
-<link rel="lazy-import" href="./ms-references.html">
-<link rel="lazy-import" href="./ms-404.html">
-
-
+<link rel="import" href="ms-icons.html">
+<link rel="lazy-import" href="ms-resume.html">
+<link rel="lazy-import" href="ms-certificates.html">
+<link rel="lazy-import" href="ms-404.html">
 
 <dom-module id="ms-app">
   <template>
     <style>
+        
       :host {
          --application-white-color: #ffffff;  
          --application-navyblue-color: #070a21;    
          --application-grey-color: #6d6f72;
          --application-darkgrey-color: #464749;
          --application-lightgrey-color: #6d6f72;
+          --application-superlight-grey-color: #b3b3b3;
          --application-green-color: #2ecc71;
          --application-font-family: 'Open Sans', sans-serif;    
 
@@ -116,10 +112,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         data="{{routeData}}"
         tail="{{subroute}}">
     </app-route>
-   
-    <app-drawer-layout fullbleed narrow="{{narrow}}">
-      <!-- Main content -->
-      <app-header-layout has-scrolling-region>
+    <!-- Main content -->
+    <app-header-layout has-scrolling-region>
         <cv-header></cv-header>
         <iron-pages
             selected="[[page]]"
@@ -128,17 +122,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             role="main">
           <ms-resume name="resume"></ms-resume>
           <ms-certificates name="certificates"></ms-certificates>
-          <!--<ms-references name="references"></ms-references>-->
           <ms-404 name="404"></ms-404>
         </iron-pages>
-       
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
             <a name="resume" href="[[rootPath]]resume"><paper-fab label="1" mini></paper-fab></a>
             <a name="certificates" href="[[rootPath]]certificates"><paper-fab label="2" mini>2</paper-fab></a>
-            <!--<a name="references" href="[[rootPath]]references"><paper-fab mini>3</paper-fab></a>-->
         </iron-selector>
-      </app-header-layout>
-    </app-drawer-layout>
+    </app-header-layout>
+
   </template>
 
   <script>

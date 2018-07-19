@@ -51,6 +51,7 @@
       ul{
         margin-top: 40px;
       }
+        
       @media only screen and (max-width : 768px) {
           :host {
             width: 100%;
@@ -75,6 +76,7 @@
           ul{
             margin-top: 10px;
            }
+          
           .short-width{
             width: 100%;      
           }
@@ -84,43 +86,30 @@
           }
       }
     </style> 
-    <div>
-      <h1>Certificates</h1>    
-      <h2>Learn Java</h2>
-      <p class="descript">codecademy.com | Sept 2016</p>
-      <h2>Distributing iOS Applications Through the App Store</h2>
-      <p class="descript">lynda.com | Jan 2016</p>
-      <h2>Up and Running With Angular.js</h2>
-      <p class="descript">lynda.com | June 2015</p>
-      <h2>iOS App Development Essential Training</h2>
-      <p class="descript">lynda.com | June 2014</p>
-      <h2>Objective-C Essential Training</h2>
-      <p class="descript">lynda.com | May 2014</p>    
-    </div>
+    <h1>Certificates</h1>   
+    <template is="dom-repeat" items="{{certifications}}" as="certificate">   
+      <h2>[[certificate.name]]</h2>
+      <p class="descript">[[certificate.descript]]</p>   
+    </template>
     <div class="short-width">
       <h1>Charity Work</h1>        
       <h2>Monica Martineau Foundation</h2>
       <p class="descript">IT / Web-Master | 2013 - Present <br> Manages IT related items and web support for the Monica Martineau Foundation. The Monica Martineau Foundation Provides scholarships for graduating grade 8 and 12 students, funds for the Society of St. Vincent de Paul and for R. Martineau House for mentally &amp; physically handicapped individuals.</p>  
     </div>
-    <div>
-      <h1>Awards</h1>     
-      <h2>Presidential Honours</h2>
-      <p class="descript">Achieved an average of more than 80% for 35 credits</p>
-      <h2>Honour Roll</h2>
-      <p class="descript">Achieved an average of more than 80% for 6 classes</p>
-      <h2>English Award</h2>   
-      <p class="descript">Graduated with the highest grade within Grade 12 English</p>    
-    </div>
+    <h1>Awards</h1>   
+    <template is="dom-repeat" items="{{awards}}" as="award">    
+      <h2>[[award.name]]</h2>
+      <p class="descript">[[award.descript]]</p>
+    </template>
     <div>
       <h1>Interests</h1>
       <ul>
-          <li>Playing / Listening to music</li>
-          <li>Reading</li>
-          <li>Gardening</li>
+          <template is="dom-repeat" items="{{interests}}" as="interest">    
+            <li>[[interest.name]]</li>
+          </template>
       </ul>  
     </div>
   </template>
-
   <script>
     /**
      * `certificates-column-right`
@@ -132,6 +121,45 @@
      */
     class CeriticatesColumnRight extends Polymer.Element {
       static get is() { return 'certificates-column-right'; }
+        
+      static get properties() {
+            
+          return {
+              certifications: {
+                type: Array,
+                value() {
+                  return [
+                    {name: "Learning Polymer", descript: "lynda.com | July 2018"},  
+                    {name: "Learn Java", descript: "codecademy.com | Sept 2016"},
+                    {name: "Distributing iOS Applications Through the App Store", descript: "lynda.com | Jan 2016"},
+                    {name: "Up and Running With Angular.js", descript: "lynda.com | June 2015"},
+                    {name: "iOS App Development Essential Training", descript: "lynda.com | June 2014"},
+                    {name: "Objective-C Essential Training", descript: "lynda.com | May 2014"}
+                  ];
+                }
+              },
+              awards: {
+                type: Array,
+                value() {
+                  return [
+                    {name: "Presidential Honours", descript: "Achieved an average of more than 80% for 35 credits"},  
+                    {name: "Honour Roll", descript: "Achieved an average of more than 80% for 6 classes"},
+                    {name: "English Award", descript: "Graduated with the highest grade within Grade 12 English"}
+                  ];
+                }
+              },
+              interests: {
+                type: Array,
+                value() {
+                  return [
+                    {name: "Playing / Listening to music"},
+                    {name: "Reading"},
+                    {name: "Gardening"}
+                  ];
+                }
+              }
+           }
+       }    
     }
 
     window.customElements.define(CeriticatesColumnRight.is, CeriticatesColumnRight);
