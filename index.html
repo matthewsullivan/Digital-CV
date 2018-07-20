@@ -92,17 +92,117 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <!-- Add any global styles for body, document, etc. -->
     <style>
+        
       body {
         margin: 0;
         height: auto;  
         background-color: #070a21;
       }
+     
+      .body-fill{
+        box-sizing: border-box;  
+        padding: 100px 20px 20px 20px;
+        background-color: #ffffff;
+        width: 100vw;
+        height:100vh;
+        border: 20px solid #070a21;
+        text-align: center; 
+      }
+        
+      h1 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight:900;
+        color: #070a21;
+        text-transform: uppercase;
+        font-size: 2.0em;
+        letter-spacing: 4px;
+        line-height: 25px;
+        margin-top: 30px; 
+    
+      } 
+      
+      p{
+        font-family: 'Open Sans', sans-serif;
+        color: #070a21;
+        font-weight: 400;
+        font-size: 1.0em;
+        line-height: 5px;  
+      }
+      
+      .offer{
+         margin-top: 40px;
+       }
+
+      a{
+        color: #000000;
+        text-decoration: none;
+      }    
+        
+     a:hover {
+        transition: color .8s;
+        color: #2ecc71;
+     }
+        
+     a.btn,.btn {
+        display: inline-block;
+        outline: none;
+        *zoom: 1;
+        text-align: center;
+        text-decoration: none;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        letter-spacing: 1px;
+        vertical-align: middle;
+        border: 1px solid;
+        transition: all 0.2s ease;
+        box-sizing: border-box;
+        text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+     }
+           
+     .btn-medium {
+	    font-size: 0.9375em;
+	    padding: 0.5375em 1.375em;
+     }
+        
+    .btn-green {
+        background: #2ecc71;
+        color: #ffffff;
+        border-color: #ffffff;
+    }
+        
+    .btn-green:hover {
+       background: #2ecc71;
+       color: #ffffff;
+       border-color: #2ecc71;		
+    }
+        
+    .vertical-line{
+        margin: 20px auto 20px auto;
+        width: 1px;
+        height: 60px;
+        background-color: #2ecc71;
+    }  
+        
+    @media only screen and (max-width : 768px) {
+       
+         p{
+            line-height: 20px;
+         }
+     }
     </style>
   </head>
   <body>
     <ms-app></ms-app>
     <noscript>
-      Please enable JavaScript to view this website.
+      <div class="body-fill">
+        <img src="./images/manifest/icon-512x512.png" alt="Matthew Sullivan Logo" width="100" height="100"/>
+        <h1>Javascript Disabled</h1><br>
+        <p>It appears your browser has JavaScript rendering disabled. For the full viewing experience of this site please turn on JavaScript.</p>
+        <p class="offer">Feel free to look at my PDF CV instead.</p>
+        <div class="vertical-line"></div>  
+        <a class="btn btn-medium btn-green" target="_blank" href="https://www.matthewsullivan.media/assets/cv/MatthewSullivanCV.pdf">Curriculum Vitae</a> 
+        <p>Contact me at : <a href="mailTo:contact@matthewsullivan.media">contact@matthewsullivan.media</a></p>    
+        </div>
     </noscript>
     <!-- Built with love using Polymer Starter Kit -->
   </body>
