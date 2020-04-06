@@ -20,40 +20,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         padding: 10px;
       }
-      .vertical-line-wrapper{
-        float:left;
+
+      .vertical-line-wrapper {
+        float: left;
+        margin-top: 25px; 
+        opacity: 0.8; 
         width: 4%;
-        opacity: 0.8;
-        margin-top: 25px;  
-       }    
+       }
+
       .circle {
-        width: 7px;
-        height: 7px;
         background-color: var(--application-grey-color);  
         border-radius: 100px;
-        position: relative;
+        height: 7px;
         margin: 5px auto 5px auto;
-      }  
-      .vertical-line{
-         width: 1px;
+        position: relative;
+        width: 7px;
+      }
+
+      .vertical-line {
          background-color: var(--application-grey-color);
          margin: 5px auto 5px auto;
+         width: 1px;
        }
-      .vertical-line:nth-of-type(2){
-          height:183px;
+
+      .vertical-line:nth-of-type(2) {
+          height: 183px;
        }
-       .vertical-line:nth-of-type(4){
-          height:548px;
+
+       .vertical-line:nth-of-type(4) {
+          height: 548px;
        }
-       .vertical-line:nth-of-type(6){
-          height:220px;
+
+       .vertical-line:nth-of-type(6) {
+          height: 220px;
        }
-       @media only screen and (max-width : 768px) {
-           .vertical-line-wrapper{
-               display: none;
-           }   
+
+      @media only screen and (max-width : 768px) {
+        .vertical-line-wrapper{
+          display: none;
+        }   
       }  
     </style>
+
     <resume-column-left></resume-column-left>
     <div class="vertical-line-wrapper">
         <div class="circle"></div>

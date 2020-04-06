@@ -30,15 +30,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style>
         
       :host {
-         --application-white-color: #ffffff;  
-         --application-navyblue-color: #070a21;    
-         --application-grey-color: #6d6f72;
-         --application-darkgrey-color: #464749;
-         --application-lightgrey-color: #6d6f72;
-          --application-superlight-grey-color: #b3b3b3;
-         --application-green-color: #2ecc71;
-         --application-font-family: 'Open Sans', sans-serif;    
-
+        --application-darkgrey-color: #464749;
+        --application-font-family: 'Open Sans', sans-serif;
+        --application-green-color: #2ecc71;
+        --application-grey-color: #6d6f72;
+        --application-lightgrey-color: #6d6f72;
+        --application-navyblue-color: #070a21;    
+        --application-superlight-grey-color: #b3b3b3;
+        --application-white-color: #ffffff;
         display: block;
       }
 
@@ -47,14 +46,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       app-header {
-        color: #fff;
         background-color: var(--application-white-color);
+        color: #fff;
       }
         
-      app-header-layout{
+      app-header-layout {
         background-color: var(--application-white-color);
-        margin: 20px;
         height: auto;
+        margin: 20px;
         padding-bottom: 20px;    
       }
 
@@ -67,11 +66,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       .drawer-list a {
+        color: var(--application-white-color);
         display: block;
+        line-height: 40px;
         padding: 0 16px;
         text-decoration: none;
-        color: var(--application-white-color);
-        line-height: 40px;
       }
 
       .drawer-list a.iron-selected {
@@ -79,12 +78,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         font-weight: bold;
       }
         
-      iron-selector{    
-        right: 0;
+      iron-selector {
         bottom: 20px;
-        position: fixed;    
+        position: fixed;
+        right: 0;    
       }
-      iron-selector>a{
+      iron-selector > a {
         margin-bottom: 5px;    
       }
         
@@ -94,8 +93,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       paper-fab[label] {
-        font-size: 16px;
         font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
         font-weight:600;
         line-height: 20px;  
       }     
@@ -112,6 +111,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         data="{{routeData}}"
         tail="{{subroute}}">
     </app-route>
+
     <!-- Main content -->
     <app-header-layout has-scrolling-region>
         <cv-header></cv-header>

@@ -4,81 +4,81 @@
   <template>
     <style>
       :host {
+        float: right;
         display: block;
         width: 48%;
-        float:right;
         text-align: left; 
       }
        
-      h1{
-        font-family: var(--application-font-family);
-        font-weight:600;
+      h1 {
         color: var(--application-navyblue-color);
-        text-transform: uppercase;
+        font-family: var(--application-font-family);
         font-size: 1.0em;
-        line-height: 5px;
-        margin-top: 30px;  
-      }
-        
-      h2{
-        font-family: var(--application-font-family);
         font-weight:600;
+        line-height: 5px;
+        margin-top: 30px;
+        text-transform: uppercase;  
+      }
+        
+      h2 {
         color: var(--application-navyblue-color);
-        text-transform: uppercase;
+        font-family: var(--application-font-family);
         font-size: 0.8em;
+        font-weight: 600;
         line-height: 5px;
-        margin-top: 30px;  
+        margin-top: 30px;
+        text-transform: uppercase;  
       }
         
-      h3{
-        font-family: var(--application-font-family);
-        font-weight:400;
+      h3 {
         color: var(--application-lightgrey-color);
+        font-family: var(--application-font-family);
         font-size: 0.8em;
+        font-weight: 400;
         line-height: 5px;
         margin-top: 30px;  
       }
         
-     .date{    
-        font-family: var(--application-font-family);
-        font-weight:200;
+     .date {
         color: var(--application-darkgrey-color);
+        font-family: var(--application-font-family);
         font-size: 0.9em;
+        font-weight:200;
       }
         
-     .descript{    
-        font-family: var(--application-font-family);
-        font-weight:200;
+     .descript{
         color: var(--application-darkgrey-color);
-        font-size: 0.8em; 
+        font-family: var(--application-font-family);
+        font-size: 0.8em;
+        font-weight:200; 
         line-height: 0; 
       } 
           
-      ul{
+      ul {
         list-style: none; 
         padding-left: 0;
       }
 
-      li{      
-        font-family: var(--application-font-family);
-        font-weight:200;
+      li {
         color: var(--application-darkgrey-color);
+        font-family: var(--application-font-family);
         font-size: 0.8em;
+        font-weight:200;
         margin-bottom: 10px;  
-      
       }
         
       @media only screen and (max-width : 768px) {
-          :host {
-            width: 100%;
-            text-align: center;  
-          }
+        :host {
+          text-align: center;
+          width: 100%;
+        }
           
-         .descript{  
-             line-height: 18px;  
-          }
+        .descript{  
+          line-height: 18px;  
+        }
       }
     </style> 
+
     <h1>Education</h1>  
     <template is="dom-repeat" items="{{education}}" as="education">
       <h2>[[education.name]]</h2>

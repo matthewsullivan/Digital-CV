@@ -5,70 +5,71 @@
     <style>
       :host {
         display: block;
-        width: 48%;
         float:left;
+        width: 48%;
         text-align: right; 
       }
       
-      h1{
-        font-family: var(--application-font-family);
-        font-weight:600;
+      h1 {
         color: var(--application-navyblue-color);
-        text-transform: uppercase;
+        font-family: var(--application-font-family);
         font-size: 1.0em;
-        line-height: 5px;
-        margin-top: 30px;  
-      }
-        
-      h2{
-        font-family: var(--application-font-family);
         font-weight:600;
-        color: var(--application-navyblue-color);
-        text-transform: uppercase;
-        font-size: 0.8em;
         line-height: 5px;
-        margin-top: 30px;  
+        margin-top: 30px;
+        text-transform: uppercase;
       }
         
-     .date{    
+      h2 {
+        color: var(--application-navyblue-color);
         font-family: var(--application-font-family);
-        font-weight:200;
+        font-size: 0.8em;
+        font-weight: 600;
+        line-height: 5px;
+        margin-top: 30px; 
+        text-transform: uppercase; 
+      }
+        
+     .date {    
         color: var(--application-darkgrey-color);
+        font-family: var(--application-font-family);
         font-size: 0.9em;
+        font-weight:200;
       }
         
-     .descript{    
-        font-family: var(--application-font-family);
-        font-weight:200;
+     .descript {
         color: var(--application-darkgrey-color);
+        font-family: var(--application-font-family);
         font-size: 0.8em; 
+        font-weight:200;
         line-height: 0; 
       }
   
-      ul{
+      ul {
         list-style: none; 
         padding-left: 0;
       }
 
-      li{      
-        font-family: var(--application-font-family);
-        font-weight:200;
+      li {
         color: var(--application-darkgrey-color);
+        font-family: var(--application-font-family);
         font-size: 0.8em;
+        font-weight:200;
         margin-bottom: 10px;  
-      
       } 
         
       @media only screen and (max-width : 768px) {
-          :host {
-            width: 100%;
-            text-align: center;  
-          }
-         .descript{  
-             line-height: 18px;  
-          }
+        :host {
+          width: 100%;
+          text-align: center;  
+        }
+
+        .descript {  
+          line-height: 18px;  
+        }
       }
     </style>
+
     <h1>Experience</h1>
     <template is="dom-repeat" items="{{experience}}" as="experience">
       <h2>[[experience.title]]</h2>
@@ -111,7 +112,6 @@
               }
            }
        }
-        
     }
       
     window.customElements.define(ResumeColumnLeft.is, ResumeColumnLeft);

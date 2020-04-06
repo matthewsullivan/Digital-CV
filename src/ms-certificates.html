@@ -21,49 +21,51 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding: 10px;
       }
         
-      .vertical-line-wrapper{
-        float:left;
-        width: 4%;
+      .vertical-line-wrapper {
+        float: left;
         opacity: 0.8;
-        margin-top: 25px;  
+        margin-top: 25px;
+        width: 4%;  
        }
         
       .circle {
-        width: 7px;
-        height: 7px;
         background-color: var(--application-grey-color);  
         border-radius: 100px;
-        position: relative;
+        height: 7px;
         margin: 5px auto 5px auto;
+        position: relative;
+        width: 7px;
       } 
         
-      .vertical-line{
-         width: 1px;
-         background-color: var(--application-grey-color);
-         margin: 5px auto 5px auto;
-       }
+      .vertical-line {
+        background-color: var(--application-grey-color);
+        margin: 5px auto 5px auto;
+        width: 1px;
+      }
         
       .vertical-line:nth-of-type(2){
-          height:360px;
+        height: 360px;
        }
         
-       .vertical-line:nth-of-type(4){
-          height:120px;
-       }
+      .vertical-line:nth-of-type(4){
+        height: 120px;
+      }
         
-       .vertical-line:nth-of-type(6){
-          height:192px;
-       }
+      .vertical-line:nth-of-type(6){
+        height: 192px;
+      }
         
       .vertical-line:nth-of-type(8){
-          height:200px;
-       }
-       @media only screen and (max-width : 768px) {
-           .vertical-line-wrapper{
-               display: none;
-           }   
+        height: 200px;
+      }
+
+      @media only screen and (max-width : 768px) {
+        .vertical-line-wrapper{
+          display: none;
+        }   
       }
     </style>
+
     <certificates-column-left></certificates-column-left>
     <div class="vertical-line-wrapper">
         <div class="circle"></div>
