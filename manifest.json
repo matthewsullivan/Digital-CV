@@ -1,7 +1,7 @@
 {
-  "name": "Matthew Sullivan CV || 2018",
-  "short_name": "MSCV",
+  "background_color": "#070a21",
   "description": "Digital copy of my CV built using Polymer",
+  "display": "standalone",
   "icons": [
     {
       "src": "images/manifest/icon-192x192.png",
@@ -14,8 +14,8 @@
       "type": "image/png"
     }
   ],
+  "name": "Matthew Sullivan CV || 2018",
+  "short_name": "MSCV",
   "start_url": "/",
-  "display": "standalone",
-  "theme_color": "#070a21",
-  "background_color": "#070a21"
+  "theme_color": "#070a21"
 }
