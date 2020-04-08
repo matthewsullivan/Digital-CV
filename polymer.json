@@ -1,23 +1,4 @@
 {
-  "entrypoint": "index.html",
-  "shell": "src/ms-app.html",
-  "fragments": [
-    "src/ms-resume.html",
-    "src/ms-certificates.html",
-    "src/ms-404.html"
-  ],
-  "sources": [
-    "images/**/*",
-    "src/**/*"
-  ],
-  "extraDependencies": [
-    "bower_components/webcomponentsjs/*.js",
-    "!bower_components/webcomponentsjs/gulpfile.js",
-    "manifest.json"
-  ],
-  "lint": {
-    "rules": ["polymer-2"]
-  },
   "builds": [
     {
       "preset": "es5-bundled"
@@ -28,5 +9,24 @@
     {
       "preset": "es6-unbundled"
     }
+  ],
+  "entrypoint": "index.html",
+  "extraDependencies": [
+    "bower_components/webcomponentsjs/*.js",
+    "!bower_components/webcomponentsjs/gulpfile.js",
+    "manifest.json"
+  ],
+  "fragments": [
+    "src/ms-resume.html",
+    "src/ms-certificates.html",
+    "src/ms-404.html"
+  ],
+  "lint": {
+    "rules": ["polymer-2"]
+  },
+  "shell": "src/ms-app.html",
+  "sources": [
+    "images/**/*",
+    "src/**/*"
   ]
 }
